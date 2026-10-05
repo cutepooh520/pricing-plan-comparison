@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>179 收費方案比較</title>
+  <style>
+    :root{
+      --bg:#f4f2ee;--panel:#fff;--ink:#25231f;--muted:#746f67;--line:#dfdbd3;
+      --amber:#e6a900;--amber-soft:#fff4ce;--green:#2f7652;--red:#a34747;--shadow:0 12px 34px rgba(68,58,44,.08)
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+    main{width:min(1180px,calc(100% - 32px));margin:auto;padding:32px 0 56px}
+    header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:24px}
+    h1{margin:0;font-size:clamp(30px,5vw,54px);letter-spacing:-.04em}
+    .sub{color:var(--muted);margin:10px 0 0;line-height:1.7}
+    .stamp{font-size:12px;color:#826100;background:var(--amber-soft);padding:8px 12px;border-radius:999px;font-weight:700}
+    .summary{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:20px 0 28px}
+    .summary div{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 15px;box-shadow:var(--shadow)}
+    .summary b{display:block;font-size:18px;margin-bottom:4px}
+    .summary span{font-size:12px;color:var(--muted)}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+    button.active{background:#292722;color:#fff;border-color:#292722}
+    .table{overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+    .row{display:grid;grid-template-columns:1.15fr 1.45fr 1.45fr 92px;align-items:stretch;border-top:1px solid var(--line)}
+    .row:first-child{border-top:0}
+    .cell{padding:15px 16px;line-height:1.55;font-size:14px}
+    .head .cell{font-size:12px;color:var(--muted);font-weight:800;background:#faf9f7}
+    .topic{font-weight:800}
+    .proposed{background:#fffaf0}
+    .tag{align-self:center;justify-self:start;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:800}
+    .same{background:#e7f1eb;color:var(--green)}
+    .adjust{background:#fff0bf;color:#7e5e00}
+    .major{background:#f5e1e1;color:var(--red)}
+    section{margin-top:30px}
+    h2{font-size:22px;margin:0 0 14px;letter-spacing:-.02em}
+    .plans{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+    .plan.featured{border:2px solid var(--amber);padding:17px}
+    .plan .type{font-size:11px;color:#926d00;font-weight:800;letter-spacing:.12em}
+    .plan h3{margin:6px 0 4px;font-size:20px}
+    .price{font-size:18px;font-weight:800}
+    ul{padding-left:18px;margin:14px 0 0;color:#4f4b45;line-height:1.75;font-size:13px}
+    .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .note{background:#2c2924;color:#fff;border-radius:18px;padding:18px}
+    .note b{display:block;margin-bottom:8px}
+    .note p{margin:0;color:#d8d2ca;font-size:13px;line-height:1.7}
+    .warning{margin-top:18px;padding:14px 16px;border-radius:14px;background:#fff4ce;color:#735700;font-size:13px;line-height:1.7}
+    footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}
+    @media(max-width:900px){
+      header{grid-template-columns:1fr}
+      .summary{grid-template-columns:repeat(2,1fr)}
+      .summary div:last-child{grid-column:1/-1}
+      .plans{grid-template-columns:1fr 1fr}
+      .notes{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
+      .head{display:none}
+      .row{padding:13px 14px;gap:8px}
+      .cell{padding:0;font-size:14px}
+      .cell:nth-child(2)::before{content:"現在：";color:var(--muted);font-weight:700}
+      .cell:nth-child(3)::before{content:"新方案：";color:#8c6900;font-weight:700}
+      .proposed{background:transparent}
+      .tag{margin-top:2px}
+    }
+    @media(max-width:560px){
+      main{width:min(100% - 22px,1180px);padding-top:22px}
+      .plans{grid-template-columns:1fr}
+      .summary{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>目前方案 vs 你的新方案</h1>
+      <p class="sub">把最重要的差異放在同一頁。先看「哪裡變了」，再看最後建議的 5 個方案。</p>
+    </div>
+    <div class="stamp">獨立離線版 · 不在 179 網站</div>
+  </header>
+
+  <div class="summary">
+    <div><b>免費發案</b><span>不限 → 每月 10 次</span></div>
+    <div><b>接案 Pro</b><span>NT$150 → NT$99</span></div>
+    <div><b>發案 Pro</b><span>維持 NT$300</span></div>
+    <div><b>企業</b><span>NT$1,200 → NT$2,000</span></div>
+    <div><b>PM 席次</b><span>5 → 8；額外 +200 不變</span></div>
+  </div>
+
+  <div class="toolbar">
+    <button class="active" data-filter="all">全部</button>
+    <button data-filter="major">只看大改</button>
+    <button data-filter="adjust">只看需調整</button>
+  </div>
+
+  <div class="table" id="compare">
+    <div class="row head">
+      <div class="cell">項目</div><div class="cell">目前</div><div class="cell">你的新方案</div><div class="cell">差異</div>
+    </div>
+    <div class="row" data-kind="major"><div class="cell topic">免費發案額度</div><div class="cell">不限次數</div><div class="cell proposed">每月 10 次</div><div class="cell"><span class="tag major">大改</span></div></div>
+    <div class="row" data-kind="same"><div class="cell topic">免費人脈</div><div class="cell">每日 10 次</div><div class="cell proposed">每日 10 次</div><div class="cell"><span class="tag same">相同</span></div></div>
+    <div class="row" data-kind="major"><div class="cell topic">免費主動交友</div><div class="cell">目前可在額度內送邀請</div><div class="cell proposed">不可主動交友／傳訊息，案件成立例外</div><div class="cell"><span class="tag major">大改</span></div></div>
+    <div class="row" data-kind="major"><div class="cell topic">接案付費</div><div class="cell">NT$150／月</div><div class="cell proposed">NT$99／月</div><div class="cell"><span class="tag major">大改</span></div></div>
+    <div class="row" data-kind="same"><div class="cell topic">發案付費</div><div class="cell">NT$300／月</div><div class="cell proposed">NT$300／月</div><div class="cell"><span class="tag same">相同</span></div></div>
+    <div class="row" data-kind="major"><div class="cell topic">企業價格</div><div class="cell">NT$1,200／月起</div><div class="cell proposed">NT$2,000／月</div><div class="cell"><span class="tag major">大改</span></div></div>
+    <div class="row" data-kind="major"><div class="cell topic">企業基本 PM</div><div class="cell">5 位</div><div class="cell proposed">8 位</div><div class="cell"><span class="tag major">大改</span></div></div>
+    <div class="row" data-kind="same"><div class="cell topic">額外 PM</div><div class="cell">+NT$200／人</div><div class="cell proposed">+NT$200／人</div><div class="cell"><span class="tag same">相同</span></div></div>
+    <div class="row" data-kind="adjust"><div class="cell topic">付費人脈次數</div><div class="cell">每日 30 次</div><div class="cell proposed">「變多」；建議直接定 30 次</div><div class="cell"><span class="tag adjust">調整</span></div></div>
+    <div class="row" data-kind="adjust"><div class="cell topic">AI</div><div class="cell">免費 10／日、付費 100／日、企業近乎不限</div><div class="cell proposed">發案 Pro AI 配對；接案 Pro 有限 AI</div><div class="cell"><span class="tag adjust">重切權益</span></div></div>
+    <div class="row" data-kind="adjust"><div class="cell topic">星探大廳</div><div class="cell">發案付費可用；接案 Pro 有曝光</div><div class="cell proposed">概念基本相同</div><div class="cell"><span class="tag adjust">微調</span></div></div>
+    <div class="row" data-kind="adjust"><div class="cell topic">通告排序</div><div class="cell">已有精選／置頂概念</div><div class="cell proposed">付費案自動往上；建議用「排序加權」</div><div class="cell"><span class="tag adjust">調整</span></div></div>
+    <div class="row" data-kind="major"><div class="cell topic">財務／勞報</div><div class="cell">目前不少功能一般會員已可使用</div><div class="cell proposed">改為接案 Pro／發案 Pro 的付費管理功能</div><div class="cell"><span class="tag major">大改</span></div></div>
+    <div class="row" data-kind="adjust"><div class="cell topic">企業管理</div><div class="cell">已有成員權限與部分 PM 財務</div><div class="cell proposed">增加每位 PM 案況、公司營運與彙總</div><div class="cell"><span class="tag adjust">擴充</span></div></div>
+  </div>
+
+  <section>
+    <h2>最後建議的 5 個方案</h2>
+    <div class="plans">
+      <div class="plan"><div class="type">發案</div><h3>免費</h3><div class="price">NT$0</div><ul><li>10 案／月</li><li>10 次人脈／日</li><li>自然排序</li><li>可管理自己的通告</li><li>不可主動聯絡陌生人才</li></ul></div>
+      <div class="plan featured"><div class="type">發案</div><h3>Pro</h3><div class="price">NT$300／月</div><ul><li>無限發案</li><li>排序加權</li><li>30 次人脈／日</li><li>AI 配對</li><li>星探大廳</li><li>財報／勞報資料</li></ul></div>
+      <div class="plan"><div class="type">公司</div><h3>企業</h3><div class="price">NT$2,000／月</div><ul><li>發案 Pro 全功能</li><li>含 8 位 PM</li><li>角色／權限管理</li><li>PM 案件狀況</li><li>公司營運／財務彙總</li><li>第 9 位起 +200</li></ul></div>
+      <div class="plan"><div class="type">接案</div><h3>免費</h3><div class="price">NT$0</div><ul><li>報名永久免費不限次</li><li>10 次人脈／日</li><li>基本配對</li><li>模卡／作品／近照</li><li>不可主動聯絡陌生人</li></ul></div>
+      <div class="plan featured"><div class="type">接案</div><h3>Pro</h3><div class="price">NT$99／月</div><ul><li>30 次人脈／日</li><li>可主動送交友邀請</li><li>星探曝光</li><li>有限 AI 配對</li><li>個人財報／行程</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>最需要注意的 3 件事</h2>
+    <div class="notes">
+      <div class="note"><b>1. 付費不能等於強制開聊天室</b><p>建議付費會員可以主動「送邀請＋自我介紹」，但對方接受後才真正開聊天室；案件成立則直接可聯絡。</p></div>
+      <div class="note"><b>2. 企業 2,000 元要有明顯價值</b><p>不能只是多 3 個 PM。公司權限、PM 案況、公司級營運與財務彙總要一起成為 Enterprise 的核心。</p></div>
+      <div class="note"><b>3. 勞報文案要保守</b><p>目前平台不代收合作款，也不應暗示平台自動代扣繳。建議寫成「勞報資料／申報資料匯出」。</p></div>
+    </div>
+    <div class="warning"><b>目前價格資料有漂移：</b>後端是接案 150／發案 300／企業 1,200 起，但 App 某些畫面仍曾出現 199／1,999。真的實作新方案時要一次統一。</div>
+  </section>
+
+  <footer>本檔為獨立比較資料，不連線、不屬於 179.com.tw，也不會被公開索引。</footer>
+</main>
+<script>
+  document.querySelectorAll("button[data-filter]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      document.querySelectorAll("button[data-filter]").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      const f=btn.dataset.filter;
+      document.querySelectorAll("#compare .row[data-kind]").forEach(row=>{
+        row.style.display=(f==="all"||row.dataset.kind===f)?"grid":"none";
+      });
+    });
+  });
+</script>
+</body>
+</html>
